@@ -135,7 +135,11 @@ self.addEventListener('fetch', (event) => {
   // We need to match cache entries ignoring these query params.
   const isHtml = url.pathname.endsWith('.html') || url.pathname.endsWith('/');
   const isNavigation = event.request.mode === 'navigate';
-
+    // Do NOT intercept the 613 font binaries (/fonts/000 to /fonts/612) into service worker cache
+    // since they total ~750MB and can freeze the browser storage or exceed quotas.
+    if (url.pathname.match(/\/fonts\/\d{3}$/)) {
+      return;
+    }
   if (isNavigation || isHtml) {
     // Network-first for HTML/navigation, with cache fallback for offline.
     // Use ignoreSearch so cached HTML matches regardless of query parameters.
