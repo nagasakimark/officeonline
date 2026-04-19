@@ -19,6 +19,13 @@ const PRECACHE_ASSETS = [
   './img/icon/excel.ico',
   './img/icon/ppt.ico',
 
+  // PDF.js viewer
+  './pdfjs/web/viewer.html',
+  './pdfjs/web/viewer.css',
+  './pdfjs/web/viewer.js',
+  './pdfjs/build/pdf.mjs',
+  './pdfjs/build/pdf.worker.mjs',
+
   // OnlyOffice API entry point
   './web-apps/apps/api/documents/api.js',
   './web-apps/vendor/jquery/jquery.min.js',
