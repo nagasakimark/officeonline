@@ -9,9 +9,7 @@ const PRECACHE_ASSETS = [
   './manifest.json',
 
   // Icons & images
-  './img/64.png',
-  './img/pwa-192.png',
-  './img/pwa-512.png',
+  './logo.png',
   './img/elementary.png',
   './img/jhs.png',
   './img/doc-formats/docx.png',
